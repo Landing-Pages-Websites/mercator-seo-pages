@@ -37,9 +37,9 @@ export default function RootLayout({
 function Header() {
   return (
     <header className="sticky top-0 z-50 bg-dark">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[72px]">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[72px]">
         {/* Logo */}
-        <a href="https://www.mercator.ai" className="flex-shrink-0">
+        <a href="https://www.mercator.ai" className="flex-shrink-0 mr-8">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/mercator-logo-white.svg"
@@ -51,11 +51,11 @@ function Header() {
         </a>
 
         {/* Nav Links */}
-        <nav className="hidden md:flex items-center gap-8 text-[15px]">
+        <nav className="hidden lg:flex items-center gap-5 text-[13px] flex-1 whitespace-nowrap">
           <div className="relative group">
             <button className="flex items-center gap-1 text-white/80 hover:text-white transition">
               Service Areas
-              <svg className="w-3.5 h-3.5 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              <svg className="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
               <div className="bg-dark-alt border border-white/10 rounded-lg shadow-xl py-2 min-w-[160px]">
@@ -69,7 +69,7 @@ function Header() {
           <div className="relative group">
             <button className="flex items-center gap-1 text-white/80 hover:text-white transition">
               Free Permit App
-              <svg className="w-3.5 h-3.5 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              <svg className="w-3 h-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
             </button>
             <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
               <div className="bg-dark-alt border border-white/10 rounded-lg shadow-xl py-2 min-w-[160px]">
@@ -78,20 +78,20 @@ function Header() {
               </div>
             </div>
           </div>
-          <a href="https://www.mercator.ai/podcast" className="text-white/80 hover:text-white transition">Future of Construction Podcast</a>
+          <a href="https://www.mercator.ai/podcast" className="text-white/80 hover:text-white transition">Podcast</a>
           <a href="https://www.mercator.ai/case-studies" className="text-white/80 hover:text-white transition">Case Studies</a>
         </nav>
 
         {/* Right side */}
-        <div className="flex items-center gap-4">
-          <a href="https://app.mercator.ai/login" className="hidden sm:block text-sm text-white/80 hover:text-white transition font-medium">
+        <div className="flex items-center gap-5 flex-shrink-0">
+          <a href="https://app.mercator.ai/login" className="hidden lg:block text-[13px] text-white/80 hover:text-white transition font-medium">
             Log in
           </a>
           <a
             href="https://meetings.hubspot.com/chase-book/demo"
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:brightness-110 transition"
+            className="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-[13px] font-semibold hover:brightness-110 transition whitespace-nowrap"
           >
             Book a Demo
           </a>
