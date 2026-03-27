@@ -8,6 +8,7 @@ import WaitlistForm from "@/components/WaitlistForm";
 import StatsBar from "@/components/StatsBar";
 import CTASection from "@/components/CTASection";
 import CategoryGrid from "@/components/CategoryGrid";
+import { getStateImage, getCategoryImage, getCategoryImageAlt } from "@/data/images";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -60,28 +61,42 @@ function StatePage({ state }: { state: NonNullable<ReturnType<typeof getStateByS
   const isLive = state.isLive;
   return (
     <>
-      <section className="bg-surface py-12 md:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative">
+        <div className="absolute inset-0 z-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={getStateImage()} alt={`Construction development in ${state.name}`} className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-dark/80" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <Breadcrumbs
+            variant="light"
             items={[
               { label: "Construction Leads", href: "/commercial-construction-leads/" },
               { label: state.name },
             ]}
           />
           {isLive && (
-            <span className="inline-flex items-center gap-1.5 bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-primary/20 text-primary text-xs font-semibold px-3 py-1 rounded-full mb-4 backdrop-blur-sm">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
               Live Coverage
             </span>
           )}
-          <h1 className="text-4xl md:text-5xl font-bold text-dark mb-6 text-balance">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance">
             Commercial Construction Leads in {state.name}
           </h1>
-          <p className="text-lg text-body max-w-3xl mb-8">
+          <p className="text-lg text-white/80 max-w-3xl mb-8">
             {isLive
               ? `Mercator.ai provides live, AI-powered construction intelligence in ${state.name}. Track private projects, discover early-stage opportunities, and connect with decision-makers before your competitors know a project exists.`
               : `Mercator.ai is expanding to ${state.name}. Soon you'll be able to track private construction projects, discover early-stage opportunities, and receive real-time alerts for commercial construction leads across ${state.name}.`}
           </p>
+          <a
+            href="https://meetings.hubspot.com/chase-book/demo"
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full text-sm font-bold hover:brightness-110 transition"
+          >
+            Book a Live Demo
+          </a>
         </div>
       </section>
 
@@ -210,23 +225,37 @@ function CategoryPage({ cat }: { cat: CategoryData }) {
 
   return (
     <>
-      <section className="bg-surface py-12 md:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative">
+        <div className="absolute inset-0 z-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={getCategoryImage(cat.slug)} alt={getCategoryImageAlt(cat.name)} className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-dark/75" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <Breadcrumbs
+            variant="light"
             items={[
               { label: "Construction Leads", href: "/commercial-construction-leads/" },
               { label: `${cat.name} Leads` },
             ]}
           />
-          <span className="inline-flex items-center gap-1.5 bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full mb-4">
+          <span className="inline-flex items-center gap-1.5 bg-white/10 text-white/80 text-xs font-semibold px-3 py-1 rounded-full mb-4 backdrop-blur-sm">
             {cat.parent} Category
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-dark mb-6 text-balance">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance">
             {cat.name} Construction Leads
           </h1>
-          <p className="text-lg text-body max-w-3xl mb-8">
+          <p className="text-lg text-white/80 max-w-3xl mb-8">
             Mercator.ai tracks {cat.name.toLowerCase()} construction projects from the earliest planning signals through construction start. Get AI-powered visibility into upcoming {cat.name.toLowerCase()} projects before they go to bid.
           </p>
+          <a
+            href="https://meetings.hubspot.com/chase-book/demo"
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full text-sm font-bold hover:brightness-110 transition"
+          >
+            Book a Live Demo
+          </a>
         </div>
       </section>
 

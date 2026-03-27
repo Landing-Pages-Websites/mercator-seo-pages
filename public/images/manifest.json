@@ -1,0 +1,120 @@
+{
+  "cities/houston": [
+    "/images/cities/houston/hero-1.jpg",
+    "/images/cities/houston/hero-2.jpg"
+  ],
+  "cities/dallas-fort-worth": [
+    "/images/cities/dallas-fort-worth/hero-1.jpg",
+    "/images/cities/dallas-fort-worth/hero-2.jpg"
+  ],
+  "cities/san-antonio": [
+    "/images/cities/san-antonio/hero-1.jpg",
+    "/images/cities/san-antonio/hero-2.jpg"
+  ],
+  "cities/austin": [
+    "/images/cities/austin/hero-1.jpg",
+    "/images/cities/austin/hero-2.jpg"
+  ],
+  "cities/miami": [
+    "/images/cities/miami/hero-1.jpg",
+    "/images/cities/miami/hero-2.jpg"
+  ],
+  "cities/port-st-lucie": [
+    "/images/cities/port-st-lucie/hero-1.jpg",
+    "/images/cities/port-st-lucie/hero-2.jpg"
+  ],
+  "cities/orlando": [
+    "/images/cities/orlando/hero-1.jpg",
+    "/images/cities/orlando/hero-2.jpg"
+  ],
+  "cities/tampa": [
+    "/images/cities/tampa/hero-1.jpg",
+    "/images/cities/tampa/hero-2.jpg"
+  ],
+  "cities/st-petersburg": [
+    "/images/cities/st-petersburg/hero-1.jpg",
+    "/images/cities/st-petersburg/hero-2.jpg"
+  ],
+  "cities/cape-coral": [
+    "/images/cities/cape-coral/hero-1.jpg",
+    "/images/cities/cape-coral/hero-2.jpg"
+  ],
+  "cities/jacksonville": [
+    "/images/cities/jacksonville/hero-1.jpg",
+    "/images/cities/jacksonville/hero-2.jpg"
+  ],
+  "categories/commercial": [
+    "/images/categories/commercial/hero-1.jpg",
+    "/images/categories/commercial/hero-2.jpg"
+  ],
+  "categories/healthcare": [
+    "/images/categories/healthcare/hero-1.jpg",
+    "/images/categories/healthcare/hero-2.jpg"
+  ],
+  "categories/retail": [
+    "/images/categories/retail/hero-1.jpg",
+    "/images/categories/retail/hero-2.jpg"
+  ],
+  "categories/institutional": [
+    "/images/categories/institutional/hero-1.jpg",
+    "/images/categories/institutional/hero-2.jpg"
+  ],
+  "categories/office-buildings": [
+    "/images/categories/office-buildings/hero-1.jpg",
+    "/images/categories/office-buildings/hero-2.jpg"
+  ],
+  "categories/tenant-improvements": [
+    "/images/categories/tenant-improvements/hero-1.jpg",
+    "/images/categories/tenant-improvements/hero-2.jpg"
+  ],
+  "categories/industrial": [
+    "/images/categories/industrial/hero-1.jpg",
+    "/images/categories/industrial/hero-2.jpg"
+  ],
+  "categories/data-centers": [
+    "/images/categories/data-centers/hero-1.jpg",
+    "/images/categories/data-centers/hero-2.jpg"
+  ],
+  "categories/light-industrial": [
+    "/images/categories/light-industrial/hero-1.jpg",
+    "/images/categories/light-industrial/hero-2.jpg"
+  ],
+  "categories/warehousing": [
+    "/images/categories/warehousing/hero-1.jpg",
+    "/images/categories/warehousing/hero-2.jpg"
+  ],
+  "categories/manufacturing": [
+    "/images/categories/manufacturing/hero-1.jpg",
+    "/images/categories/manufacturing/hero-2.jpg"
+  ],
+  "categories/treatment-plants": [
+    "/images/categories/treatment-plants/hero-1.jpg",
+    "/images/categories/treatment-plants/hero-2.jpg"
+  ],
+  "categories/multi-family": [
+    "/images/categories/multi-family/hero-1.jpg",
+    "/images/categories/multi-family/hero-2.jpg"
+  ],
+  "categories/mixed-use": [
+    "/images/categories/mixed-use/hero-1.jpg",
+    "/images/categories/mixed-use/hero-2.jpg"
+  ],
+  "categories/high-rise": [
+    "/images/categories/high-rise/hero-1.jpg",
+    "/images/categories/high-rise/hero-2.jpg"
+  ],
+  "categories/mid-rise": [
+    "/images/categories/mid-rise/hero-1.jpg",
+    "/images/categories/mid-rise/hero-2.jpg"
+  ],
+  "categories/low-rise": [
+    "/images/categories/low-rise/hero-1.jpg",
+    "/images/categories/low-rise/hero-2.jpg"
+  ],
+  "general": [
+    "/images/general/general-state-1.jpg",
+    "/images/general/general-state-2.jpg",
+    "/images/general/hero-1.jpg",
+    "/images/general/hero-2.jpg"
+  ]
+}

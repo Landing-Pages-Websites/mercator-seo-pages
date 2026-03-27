@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { states, getStateBySlug, getAllCities, getNearbyCities, slugify } from "@/data/states";
 import { categoryGroups } from "@/data/categories";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { getCityImage, getCityImageAlt } from "@/data/images";
 import WaitlistForm from "@/components/WaitlistForm";
 import StatsBar from "@/components/StatsBar";
 import CTASection from "@/components/CTASection";
@@ -45,29 +46,41 @@ export default async function CityPage({ params }: Props) {
 
   return (
     <>
-      <section className="bg-surface py-12 md:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs
-            items={[
-              { label: "Construction Leads", href: "/commercial-construction-leads/" },
-              { label: state.name, href: `/commercial-construction-leads/${state.slug}/` },
-              { label: cityName },
-            ]}
-          />
+      {/* Hero image */}
+      <section className="relative">
+        <div className="absolute inset-0 z-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={getCityImage(citySlug)} alt={getCityImageAlt(cityName)} className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-dark/75" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <Breadcrumbs variant="light" items={[
+            { label: "Construction Leads", href: "/commercial-construction-leads/" },
+            { label: state.name, href: `/commercial-construction-leads/${state.slug}/` },
+            { label: cityName },
+          ]} />
           {isLive && (
-            <span className="inline-flex items-center gap-1.5 bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full mb-4">
+            <span className="inline-flex items-center gap-1.5 bg-primary/20 text-primary text-xs font-semibold px-3 py-1 rounded-full mb-4 backdrop-blur-sm">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
               Live Coverage
             </span>
           )}
-          <h1 className="text-4xl md:text-5xl font-bold text-dark mb-6 text-balance">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance">
             Commercial Construction Leads in {cityName}, {state.name}
           </h1>
-          <p className="text-lg text-body max-w-3xl mb-8">
+          <p className="text-lg text-white/80 max-w-3xl mb-8">
             {isLive
               ? `Mercator.ai is actively tracking private construction projects in the ${cityName} metro area. Get AI-powered visibility into commercial, industrial, and multi-family projects before they go to bid.`
               : `Mercator.ai is expanding to ${cityName}, ${state.abbr}. Sign up to get notified when we launch coverage for commercial construction leads in ${cityName} and the surrounding ${state.name} market.`}
           </p>
+          <a
+            href="https://meetings.hubspot.com/chase-book/demo"
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full text-sm font-bold hover:brightness-110 transition"
+          >
+            Book a Live Demo
+          </a>
         </div>
       </section>
 
