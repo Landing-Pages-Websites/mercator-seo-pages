@@ -36,27 +36,66 @@ export default function RootLayout({
 
 function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        <a href="https://www.mercator.ai" className="flex items-center gap-2">
-          <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 4L4 36h32L20 4zm0 8l10 20H10l10-20z" fill="#172C29"/>
-          </svg>
-          <span className="text-xl font-bold text-dark">Mercator.ai</span>
+    <header className="sticky top-0 z-50 bg-dark">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[72px]">
+        {/* Logo */}
+        <a href="https://www.mercator.ai" className="flex-shrink-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/mercator-logo-white.svg"
+            alt="Mercator.ai"
+            width={152}
+            height={40}
+            className="h-10 w-auto"
+          />
         </a>
-        <nav className="hidden md:flex items-center gap-6 text-sm">
-          <a href="/commercial-construction-leads/" className="text-body hover:text-dark transition">All States</a>
-          <a href="https://www.mercator.ai/pricing" className="text-body hover:text-dark transition">Pricing</a>
-          <a href="https://www.mercator.ai/case-studies" className="text-body hover:text-dark transition">Case Studies</a>
+
+        {/* Nav Links */}
+        <nav className="hidden md:flex items-center gap-8 text-[15px]">
+          <div className="relative group">
+            <button className="flex items-center gap-1 text-white/80 hover:text-white transition">
+              Service Areas
+              <svg className="w-3.5 h-3.5 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
+              <div className="bg-dark-alt border border-white/10 rounded-lg shadow-xl py-2 min-w-[160px]">
+                <a href="https://www.mercator.ai/texas-construction-coverage" className="block px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/5 transition">Texas</a>
+                <a href="https://www.mercator.ai/florida-construction-coverage" className="block px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/5 transition">Florida</a>
+              </div>
+            </div>
+          </div>
+          <a href="https://www.mercator.ai/articles" className="text-white/80 hover:text-white transition">Articles</a>
+          <a href="https://www.mercator.ai/pricing" className="text-white/80 hover:text-white transition">Pricing</a>
+          <div className="relative group">
+            <button className="flex items-center gap-1 text-white/80 hover:text-white transition">
+              Free Permit App
+              <svg className="w-3.5 h-3.5 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
+              <div className="bg-dark-alt border border-white/10 rounded-lg shadow-xl py-2 min-w-[160px]">
+                <a href="https://www.mercator.ai/mercator-ai-free-permits-app-texas" className="block px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/5 transition">Texas</a>
+                <a href="https://www.mercator.ai/free-florida-permits-app" className="block px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/5 transition">Florida</a>
+              </div>
+            </div>
+          </div>
+          <a href="https://www.mercator.ai/podcast" className="text-white/80 hover:text-white transition">Future of Construction Podcast</a>
+          <a href="https://www.mercator.ai/case-studies" className="text-white/80 hover:text-white transition">Case Studies</a>
         </nav>
-        <a
-          href="https://meetings.hubspot.com/chase-book/demo"
-          target="_blank"
-          rel="noopener"
-          className="hidden sm:inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark transition"
-        >
-          Book a Demo
-        </a>
+
+        {/* Right side */}
+        <div className="flex items-center gap-4">
+          <a href="https://app.mercator.ai/login" className="hidden sm:block text-sm text-white/80 hover:text-white transition font-medium">
+            Log in
+          </a>
+          <a
+            href="https://meetings.hubspot.com/chase-book/demo"
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:brightness-110 transition"
+          >
+            Book a Demo
+          </a>
+        </div>
       </div>
     </header>
   );
@@ -64,45 +103,59 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="bg-dark text-white/70">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 4L4 36h32L20 4zm0 8l10 20H10l10-20z" fill="white"/>
-              </svg>
-              <span className="text-lg font-bold text-white">Mercator.ai</span>
-            </div>
+    <footer className="bg-dark text-white/60 border-t border-white/5">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid md:grid-cols-4 gap-10">
+          {/* Brand */}
+          <div className="md:col-span-1">
+            <a href="https://www.mercator.ai" className="inline-block mb-5">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/mercator-logo-white.svg"
+                alt="Mercator.ai"
+                width={152}
+                height={40}
+                className="h-9 w-auto"
+              />
+            </a>
             <p className="text-sm leading-relaxed">
-              AI-powered business development for the construction industry. Find private projects earlier, track active opportunities, and get real-time alerts.
+              Mercator.ai is AI-powered business development for the construction industry that drives strategic business development with real-time data.
             </p>
           </div>
+
+          {/* Solutions */}
           <div>
-            <h4 className="text-white font-semibold mb-3 text-sm">Solutions</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="text-white font-semibold text-xs uppercase tracking-wider mb-4">Solutions</h4>
+            <ul className="space-y-3 text-sm">
               <li><a href="https://www.mercator.ai/pricing" className="hover:text-white transition">Pricing</a></li>
-              <li><a href="https://www.mercator.ai/case-studies" className="hover:text-white transition">Case Studies</a></li>
             </ul>
           </div>
+
+          {/* Resources */}
           <div>
-            <h4 className="text-white font-semibold mb-3 text-sm">Resources</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="text-white font-semibold text-xs uppercase tracking-wider mb-4">Resources</h4>
+            <ul className="space-y-3 text-sm">
               <li><a href="https://www.mercator.ai/articles" className="hover:text-white transition">Articles</a></li>
-              <li><a href="https://www.mercator.ai/podcast" className="hover:text-white transition">Podcast</a></li>
+              <li><a href="https://www.mercator.ai/case-studies" className="hover:text-white transition">Case Studies</a></li>
+              <li><a href="https://www.mercator.ai/podcast" className="hover:text-white transition">Future of Construction Podcast</a></li>
+              <li><a href="https://www.mercator.ai/mercator-ai-free-permits-app-texas" className="hover:text-white transition">Mercator.ai Free Permits App</a></li>
             </ul>
           </div>
+
+          {/* Company */}
           <div>
-            <h4 className="text-white font-semibold mb-3 text-sm">Coverage</h4>
-            <ul className="space-y-2 text-sm">
-              <li><a href="/commercial-construction-leads/" className="hover:text-white transition">All States</a></li>
-              <li><a href="/commercial-construction-leads/texas/" className="hover:text-white transition">Texas</a></li>
-              <li><a href="/commercial-construction-leads/florida/" className="hover:text-white transition">Florida</a></li>
+            <h4 className="text-white font-semibold text-xs uppercase tracking-wider mb-4">Company</h4>
+            <ul className="space-y-3 text-sm">
+              <li><a href="https://www.mercator.ai/contact-us" className="hover:text-white transition">Contact us</a></li>
+              <li><a href="https://secure.collage.co/jobs/mercatorai" className="hover:text-white transition">Careers</a></li>
+              <li><a href="https://www.mercator.ai/in-the-news" className="hover:text-white transition">News</a></li>
+              <li><a href="https://www.mercator.ai/privacy-policy" className="hover:text-white transition">Privacy Policy</a></li>
             </ul>
           </div>
         </div>
-        <div className="border-t border-white/10 mt-8 pt-8 text-sm text-center">
-          © {new Date().getFullYear()} Mercator.ai Inc. All rights reserved.
+
+        <div className="border-t border-white/10 mt-12 pt-8 text-sm text-center">
+          Copyright {new Date().getFullYear()} © Mercator.ai Inc.
         </div>
       </div>
     </footer>

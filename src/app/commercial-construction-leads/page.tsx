@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { states } from "@/data/states";
+import { states, getLiveStates, slugify } from "@/data/states";
 import { categoryGroups } from "@/data/categories";
 import StatsBar from "@/components/StatsBar";
 import CTASection from "@/components/CTASection";
@@ -12,6 +12,8 @@ export const metadata: Metadata = {
 };
 
 export default function ConstructionLeadsHub() {
+  const liveStates = getLiveStates();
+
   return (
     <>
       {/* Hero */}
@@ -30,7 +32,7 @@ export default function ConstructionLeadsHub() {
             href="https://meetings.hubspot.com/chase-book/demo"
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-primary-dark transition"
+            className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full text-lg font-bold hover:brightness-110 transition"
           >
             Book a Live Demo
           </a>
@@ -39,8 +41,53 @@ export default function ConstructionLeadsHub() {
 
       <StatsBar />
 
-      {/* State Grid */}
+      {/* Live Coverage Markets */}
       <section className="py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-flex items-center gap-1.5 bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full mb-4">
+              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              Live Coverage
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">
+              Markets We Cover
+            </h2>
+            <p className="text-body max-w-2xl mx-auto">
+              Mercator.ai is live in Texas and Florida. Explore construction leads by city in our active markets.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {liveStates.map((state) => (
+              <div key={state.slug} className="bg-white border border-gray-100 rounded-2xl p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <h3 className="text-2xl font-bold text-dark">{state.name}</h3>
+                  <Link
+                    href={`/commercial-construction-leads/${state.slug}/`}
+                    className="text-primary text-sm font-medium hover:text-primary-dark transition"
+                  >
+                    View state page →
+                  </Link>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  {state.coveredCities.map((city) => (
+                    <Link
+                      key={city}
+                      href={`/commercial-construction-leads/${state.slug}/${slugify(city)}/`}
+                      className="bg-surface hover:bg-primary/5 border border-gray-100 hover:border-primary/30 rounded-xl px-4 py-3 text-sm font-medium text-dark hover:text-primary transition text-center"
+                    >
+                      {city}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* All States Grid */}
+      <section className="bg-surface py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4 text-center">
             Construction Leads by State
@@ -53,17 +100,22 @@ export default function ConstructionLeadsHub() {
               <Link
                 key={state.slug}
                 href={`/commercial-construction-leads/${state.slug}/`}
-                className="bg-surface hover:bg-primary/5 border border-gray-100 hover:border-primary/30 rounded-xl px-4 py-3 text-sm font-medium text-dark hover:text-primary transition text-center"
+                className={`border rounded-xl px-4 py-3 text-sm font-medium transition text-center ${
+                  state.isLive
+                    ? "bg-primary/5 border-primary/20 text-primary hover:bg-primary/10"
+                    : "bg-white border-gray-100 hover:border-primary/30 text-dark hover:text-primary"
+                }`}
               >
-                {state.name}
+                {state.name} {state.isLive && "●"}
               </Link>
             ))}
           </div>
+          <p className="text-center text-xs text-body/50 mt-4">● = Live coverage</p>
         </div>
       </section>
 
       {/* Category Grid */}
-      <section className="bg-surface py-16 md:py-24">
+      <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4 text-center">
             Construction Leads by Project Type
@@ -73,7 +125,7 @@ export default function ConstructionLeadsHub() {
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             {categoryGroups.map((group) => (
-              <div key={group.name} className="bg-white rounded-2xl p-8 border border-gray-100">
+              <div key={group.name} className="bg-surface rounded-2xl p-8 border border-gray-100">
                 <h3 className="text-xl font-bold text-dark mb-4">{group.name}</h3>
                 <ul className="space-y-3">
                   {group.categories.map((cat) => (
@@ -97,7 +149,7 @@ export default function ConstructionLeadsHub() {
       </section>
 
       {/* How it Works */}
-      <section className="py-16 md:py-24">
+      <section className="bg-surface py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-dark mb-12 text-center">
             How Mercator.ai Finds Construction Leads
