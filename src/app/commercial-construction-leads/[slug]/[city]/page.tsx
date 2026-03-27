@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug: stateSlug, city: citySlug } = await params;
   const state = getStateBySlug(stateSlug);
   if (!state) return {};
-  const cityName = state.topCities.find((c) => slugify(c) === citySlug);
+  const cityName = state.coveredCities.find((c) => slugify(c) === citySlug);
   if (!cityName) return {};
   return {
     title: `Commercial Construction Leads in ${cityName}, ${state.name} | Mercator.ai`,
@@ -36,11 +36,11 @@ export default async function CityPage({ params }: Props) {
   const { slug: stateSlug, city: citySlug } = await params;
   const state = getStateBySlug(stateSlug);
   if (!state) notFound();
-  const cityName = state.topCities.find((c) => slugify(c) === citySlug);
+  const cityName = state.coveredCities.find((c) => slugify(c) === citySlug);
   if (!cityName) notFound();
 
   const nearbyCities = getNearbyCities(stateSlug, citySlug);
-  const isLive = state.slug === "texas" || state.slug === "florida";
+  const isLive = state.isLive;
   const location = `${cityName}, ${state.abbr}`;
 
   return (

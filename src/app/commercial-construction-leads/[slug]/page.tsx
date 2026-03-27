@@ -57,8 +57,7 @@ export default async function SlugPage({ params }: Props) {
 
 // ==================== STATE PAGE ====================
 function StatePage({ state }: { state: NonNullable<ReturnType<typeof getStateBySlug>> }) {
-  const isLive = state.slug === "texas" || state.slug === "florida";
-
+  const isLive = state.isLive;
   return (
     <>
       <section className="bg-surface py-12 md:py-20">
@@ -166,14 +165,14 @@ function StatePage({ state }: { state: NonNullable<ReturnType<typeof getStateByS
         </div>
       </section>
 
-      {state.topCities.length > 0 && (
+      {state.coveredCities.length > 0 && (
         <section className="bg-surface py-12 md:py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl font-bold text-dark mb-6">
-              {state.name} Cities
+              {state.name} Markets We Cover
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-              {state.topCities.map((city) => (
+              {state.coveredCities.map((city) => (
                 <Link
                   key={city}
                   href={`/commercial-construction-leads/${state.slug}/${slugify(city)}/`}
