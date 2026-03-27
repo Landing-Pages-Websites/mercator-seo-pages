@@ -51,7 +51,7 @@ function Header() {
         </a>
 
         {/* Nav Links */}
-        <nav className="hidden lg:flex items-center gap-5 text-[13px] flex-1 whitespace-nowrap">
+        <nav className="hidden lg:flex items-center justify-center gap-5 text-[13px] flex-1 whitespace-nowrap">
           <div className="relative group">
             <button className="flex items-center gap-1 text-white/80 hover:text-white transition">
               Service Areas
