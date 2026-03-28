@@ -8,7 +8,7 @@ import CTASection from "@/components/CTASection";
 export const metadata: Metadata = {
   title: "Commercial Construction Leads by State | Mercator.ai",
   description:
-    "Find commercial construction leads in every US state. AI-powered project intelligence from Mercator.ai helps contractors discover private projects earlier.",
+    "Find commercial construction leads with AI-powered project intelligence. Mercator.ai helps contractors discover private projects earlier. Live in Texas and Florida.",
 };
 
 export default function ConstructionLeadsHub() {
@@ -159,7 +159,7 @@ export default function ConstructionLeadsHub() {
               {
                 step: "01",
                 title: "AI Detects Early Signals",
-                description: "Our AI monitors land sales, rezonings, permit filings, and project registrations across every market. We surface private projects months before they hit a bid board."
+                description: "Mercator.ai monitors land sales, rezonings, permit filings, and project registrations. Private projects are surfaced months before they hit a bid board."
               },
               {
                 step: "02",

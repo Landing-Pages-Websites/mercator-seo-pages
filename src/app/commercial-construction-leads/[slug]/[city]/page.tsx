@@ -71,7 +71,7 @@ export default async function CityPage({ params }: Props) {
           <p className="text-lg text-white/80 max-w-3xl mb-8">
             {isLive
               ? `Mercator.ai is actively tracking private construction projects in the ${cityName} metro area. Get AI-powered visibility into commercial, industrial, and multi-family projects before they go to bid.`
-              : `Mercator.ai is expanding to ${cityName}, ${state.abbr}. Sign up to get notified when we launch coverage for commercial construction leads in ${cityName} and the surrounding ${state.name} market.`}
+              : `Mercator.ai currently covers Texas and Florida. Join the waitlist to be notified when ${cityName}, ${state.abbr} coverage launches.`}
           </p>
           <a href="https://meetings.hubspot.com/chase-book/demo" target="_blank" rel="noopener" className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full text-sm font-bold hover:brightness-110 transition">
             Book a Live Demo

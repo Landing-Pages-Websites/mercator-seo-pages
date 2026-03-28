@@ -78,7 +78,7 @@ function StatePage({ state }: { state: NonNullable<ReturnType<typeof getStateByS
           <p className="text-lg text-white/80 max-w-3xl mb-8">
             {isLive
               ? `Mercator.ai provides live, AI-powered construction intelligence in ${state.name}. Track private projects, discover early-stage opportunities, and connect with decision-makers before your competitors know a project exists.`
-              : `Mercator.ai is expanding to ${state.name}. Soon you'll be able to track private construction projects, discover early-stage opportunities, and receive real-time alerts for commercial construction leads across ${state.name}.`}
+              : `Mercator.ai currently covers Texas and Florida with plans to expand. Join the waitlist to be notified when ${state.name} coverage launches.`}
           </p>
           <a href="https://meetings.hubspot.com/chase-book/demo" target="_blank" rel="noopener" className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full text-sm font-bold hover:brightness-110 transition">
             Book a Live Demo
@@ -116,7 +116,7 @@ function StatePage({ state }: { state: NonNullable<ReturnType<typeof getStateByS
             <div className="md:col-span-3">
               <h2 className="text-2xl font-bold text-dark mb-4">How Mercator.ai Works in {state.name}</h2>
               <p className="text-body leading-relaxed mb-6">
-                Mercator.ai is an AI-powered business development platform built for commercial construction. {isLive ? `In ${state.name}, we actively track:` : `When we launch in ${state.name}, you'll get access to:`}
+                Mercator.ai is an AI-powered business development platform built for commercial construction. {isLive ? `In ${state.name}, Mercator.ai actively tracks:` : `Mercator.ai tracks the following signals to detect projects early:`}
               </p>
               <ul className="space-y-3">
                 {[
@@ -178,7 +178,7 @@ function StatePage({ state }: { state: NonNullable<ReturnType<typeof getStateByS
             <div>
               <h2 className="text-2xl font-bold text-dark mb-4">What You&apos;ll Find on This Page When Live</h2>
               <p className="text-body leading-relaxed mb-6">
-                When {state.name} coverage is fully live, this page will include a live project feed showing active commercial construction opportunities, coverage maps showing which {state.name} markets we monitor, project alert configuration so you can receive notifications for specific project types and locations, and detailed project profiles with stakeholder contacts and project timelines.
+                {isLive ? `${state.name} coverage is live. Book a demo to see active construction projects, stakeholder data, and real-time alerts for ${state.name} markets.` : `When ${state.name} coverage launches, you'll be able to see active construction projects, stakeholder data, and real-time alerts. Sign up below to be notified.`}
               </p>
               <WaitlistForm location={state.name} />
             </div>
@@ -342,8 +342,8 @@ function CategoryPage({ cat }: { cat: CategoryData }) {
               <p className="text-body leading-relaxed mb-4">
                 The {cat.name.toLowerCase()} construction sector represents a significant portion of annual US construction spending. Market dynamics including population growth, infrastructure investment, technological change, and regulatory requirements drive consistent demand for new {cat.name.toLowerCase()} projects across virtually every metro area.
               </p>
-              <p className="text-body leading-relaxed">
-                Mercator.ai&apos;s coverage of {cat.name.toLowerCase()} construction leads spans all 50 states, with deep intelligence in Texas and Florida where we have the most comprehensive data. As we expand coverage, {cat.name.toLowerCase()} contractors in every market will have access to the same AI-powered project intelligence that top firms in our launch markets already use.
+              <p className="text-body leading-relaxed">                
+                Mercator.ai is currently live in Texas and Florida, with plans to expand to additional states. As coverage grows, {cat.name.toLowerCase()} contractors in more markets will have access to the same AI-powered project intelligence that top firms in our launch markets already use.
               </p>
             </div>
             <div>
