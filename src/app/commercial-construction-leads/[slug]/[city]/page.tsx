@@ -169,7 +169,7 @@ export default async function CityPage({ params }: Props) {
                 Why Earlier Visibility Matters in {cityName}
               </h2>
               <p className="text-body leading-relaxed mb-4">
-                In a competitive market like {cityName}, the contractor who builds relationships with owners and developers first has a significant advantage. Mercator.ai customers report finding projects 60% faster and generating 3x more qualified leads than traditional prospecting methods.
+                In a competitive market like {cityName}, the contractor who builds relationships with owners and developers first has a significant advantage. Mercator.ai clients typically report a 60% reduction in lead qualification time and a 3x increase in early-stage project discovery.
               </p>
               <p className="text-body leading-relaxed">
                 By the time a project hits a bid board, the relationships that determine who wins the work have often already been formed. Mercator.ai ensures you are part of those early conversations.

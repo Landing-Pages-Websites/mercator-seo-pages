@@ -6,7 +6,7 @@ export default function CTASection() {
           Ready to Find Projects Before Your Competitors?
         </h2>
         <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-          Join hundreds of contractors using Mercator.ai to discover private construction projects earlier, build relationships with decision-makers, and win more work.
+          Used by hundreds of business development and pre-construction professionals. Discover private construction projects earlier, build relationships with decision-makers, and win more work.
         </p>
         <a
           href="https://meetings.hubspot.com/chase-book/demo"
