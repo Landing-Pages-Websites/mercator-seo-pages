@@ -90,10 +90,13 @@ export default async function CityPage({ params }: Props) {
                 Finding Construction Leads in {cityName}
               </h2>
               <p className="text-body leading-relaxed mb-4">
-                The {cityName} construction market is competitive. General contractors, subcontractors, and suppliers compete for private projects that are often awarded before they ever appear on a public bid board. Mercator.ai gives you a head start by detecting construction projects at their earliest stage.
+                The {cityName} construction market is competitive. General contractors, subcontractors, and suppliers compete for private projects that are often awarded before they ever appear on a public bid board. Mercator.ai gives you a head start by detecting construction projects at their earliest stage, when a land deal closes, a rezoning application is filed, or a building permit is submitted.
+              </p>
+              <p className="text-body leading-relaxed mb-4">
+                In {cityName}, commercial construction leads originate from land transactions, rezoning applications, building permit filings, and early-stage project registrations. Mercator.ai&apos;s AI monitors these signals across the {cityName} metro area and surfaces actionable intelligence so you can engage with project stakeholders before your competitors.
               </p>
               <p className="text-body leading-relaxed">
-                In {cityName}, commercial construction leads originate from land transactions, rezoning applications, building permit filings, and early-stage project registrations. Mercator.ai&apos;s AI monitors these signals across the {cityName} metro area and surfaces actionable intelligence so you can engage with project stakeholders before your competitors.
+                Unlike bid boards that show projects after a contractor is being selected, Mercator.ai reveals private construction activity in {cityName} at the point of maximum opportunity. The earlier you learn about a project, the more time you have to build a relationship with the owner, developer, or design team that will determine who wins the work.
               </p>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg">
@@ -109,16 +112,19 @@ export default async function CityPage({ params }: Props) {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-5 gap-10">
             <div className="md:col-span-3">
-              <h2 className="text-2xl font-bold text-dark mb-6">
+              <h2 className="text-2xl font-bold text-dark mb-4">
                 What Mercator.ai Tracks in {cityName}
               </h2>
+              <p className="text-body leading-relaxed mb-6">
+                Mercator.ai monitors a comprehensive set of development signals across the {cityName} metro area. Each signal is connected to project stakeholder data, so you know who is behind every opportunity:
+              </p>
               <ul className="space-y-4">
                 {[
-                  `Land sales and title transfers in the ${cityName} metro area`,
-                  `Rezoning applications and conditional use permits in ${cityName} and surrounding jurisdictions`,
-                  `Building permit filings for commercial, industrial, and multi-family projects`,
-                  `Project stakeholder details including owners, developers, architects, and engineering consultants`,
-                  `Real-time updates when project scope, timeline, or stakeholders change`
+                  `Land sales and title transfers in the ${cityName} metro area that signal upcoming commercial, industrial, or multi-family development`,
+                  `Rezoning applications and conditional use permits in ${cityName} and surrounding jurisdictions that confirm a project's type and scope`,
+                  `Building permit filings for commercial, industrial, and multi-family projects that provide construction details and timelines`,
+                  `Project stakeholder details including owners, developers, architects, and engineering consultants involved in ${cityName} projects`,
+                  `Real-time updates when project scope, timeline, or stakeholders change, so you can engage at the right moment`
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -137,8 +143,28 @@ export default async function CityPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Types of projects - full width image break */}
+      {/* Who uses Mercator.ai - cards */}
       <section className="py-12 md:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-dark mb-4">Who Uses Mercator.ai in {cityName}?</h2>
+          <p className="text-body leading-relaxed mb-6">Mercator.ai serves construction professionals at every stage of the project lifecycle in {cityName}:</p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { title: "General Contractors", desc: `Discover private construction work in the ${cityName} area before it hits a bid board. Build relationships with developers and owners at the land deal or rezoning stage, when the project team is being formed and contractor selection is still open.` },
+              { title: "Subcontractors", desc: `Get upstream visibility into ${cityName} construction projects and position your specialty trade early. Know about a project before your GC sends out sub-bid invitations, and use that lead time to prepare competitive pricing and demonstrate relevant experience.` },
+              { title: "Suppliers & Manufacturers", desc: `Follow ${cityName} projects from land acquisition through design and construction. Engage architects and engineers during the specification phase when product decisions are being made, and build the relationships that lead to getting your products specified on the project.` },
+            ].map((card) => (
+              <div key={card.title} className="bg-surface rounded-xl p-6">
+                <h3 className="font-bold text-dark mb-2">{card.title}</h3>
+                <p className="text-sm text-body">{card.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Types of projects - full width image break */}
+      <section className="bg-surface py-12 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div className="order-2 md:order-1 rounded-2xl overflow-hidden shadow-lg">
@@ -153,7 +179,7 @@ export default async function CityPage({ params }: Props) {
                 Mercator.ai tracks every type of commercial construction project in the {cityName} area. Whether you specialize in healthcare facilities, data centers, retail buildouts, multi-family housing, or industrial warehousing, our platform surfaces projects that match your capabilities and market focus.
               </p>
               <p className="text-body leading-relaxed">
-                The {cityName} market spans commercial office buildings, healthcare facilities, retail centers, institutional projects, industrial developments, and multi-family housing at every scale from tenant improvements to ground-up high-rise construction.
+                The {cityName} market spans commercial office buildings, healthcare facilities, retail centers, institutional projects, industrial developments, and multi-family housing at every scale. Mercator.ai categorizes each project by type so you can filter for work that matches your expertise.
               </p>
             </div>
           </div>
@@ -161,7 +187,7 @@ export default async function CityPage({ params }: Props) {
       </section>
 
       {/* Why earlier visibility - with meeting image */}
-      <section className="bg-surface py-12 md:py-20">
+      <section className="py-12 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
@@ -171,8 +197,11 @@ export default async function CityPage({ params }: Props) {
               <p className="text-body leading-relaxed mb-4">
                 In a competitive market like {cityName}, the contractor who builds relationships with owners and developers first has a significant advantage. Mercator.ai clients typically report a 60% reduction in lead qualification time and a 3x increase in early-stage project discovery.
               </p>
+              <p className="text-body leading-relaxed mb-4">
+                By the time a project hits a bid board, the relationships that determine who wins the work have often already been formed. The general contractor, key subcontractors, and material suppliers frequently have an inside track based on early engagement with the owner and design team. Mercator.ai ensures you are part of those early conversations in {cityName}.
+              </p>
               <p className="text-body leading-relaxed">
-                By the time a project hits a bid board, the relationships that determine who wins the work have often already been formed. Mercator.ai ensures you are part of those early conversations.
+                Whether you are tracking private commercial projects, monitoring industrial development, or looking for multi-family opportunities in the {cityName} metro area, Mercator.ai gives you the intelligence to make informed decisions about where to invest your business development resources and which relationships to prioritize.
               </p>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg">
@@ -184,7 +213,7 @@ export default async function CityPage({ params }: Props) {
       </section>
 
       {/* Waitlist */}
-      <section className="py-12 md:py-20">
+      <section className="bg-surface py-12 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <WaitlistForm location={location} />
         </div>
@@ -192,7 +221,7 @@ export default async function CityPage({ params }: Props) {
 
       {/* Nearby cities */}
       {nearbyCities.length > 0 && (
-        <section className="bg-surface py-12 md:py-20">
+        <section className="py-12 md:py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl font-bold text-dark mb-6">
               More {state.name} Markets
@@ -218,7 +247,7 @@ export default async function CityPage({ params }: Props) {
       )}
 
       {/* Category links */}
-      <section className="py-12 md:py-20">
+      <section className="bg-surface py-12 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-dark mb-6">
             Construction Leads by Project Type
@@ -231,7 +260,7 @@ export default async function CityPage({ params }: Props) {
                   {group.categories.slice(0, 4).map((cat) => (
                     <li key={cat.slug}>
                       <Link href={`/commercial-construction-leads/${cat.slug}/`} className="text-primary hover:text-primary-dark text-sm font-medium transition">
-                        {cat.name} Leads →
+                        {cat.name} Construction Leads →
                       </Link>
                     </li>
                   ))}

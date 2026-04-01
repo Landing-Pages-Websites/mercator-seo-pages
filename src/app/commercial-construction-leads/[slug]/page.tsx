@@ -95,10 +95,13 @@ function StatePage({ state }: { state: NonNullable<ReturnType<typeof getStateByS
             <div>
               <h2 className="text-2xl font-bold text-dark mb-4">What Are Commercial Construction Leads?</h2>
               <p className="text-body leading-relaxed mb-4">
-                Commercial construction leads are early indicators of upcoming private building projects. In {state.name}, these signals include land transactions, rezoning applications, permit filings, and project registrations that point to new commercial, industrial, and multi-family developments.
+                Commercial construction leads are early indicators of upcoming private building projects. In {state.name}, these signals include land transactions, rezoning applications, permit filings, and project registrations that point to new commercial, industrial, and multi-family developments. Every private construction project generates a trail of public and semi-public data before a contractor is ever selected, and Mercator.ai is built to detect those signals.
+              </p>
+              <p className="text-body leading-relaxed mb-4">
+                Traditional lead sources like bid boards and plan rooms only show projects after a contractor is already being selected. By the time a project appears on these platforms, the owner has spent months working with an architect, developing construction documents, and forming the relationships that will determine who wins the work. Mercator.ai changes that by using artificial intelligence to detect projects at the earliest stage, giving general contractors, subcontractors, and suppliers in {state.name} a competitive edge.
               </p>
               <p className="text-body leading-relaxed">
-                Traditional lead sources like bid boards and plan rooms only show projects after a contractor is already being selected. Mercator.ai changes that by using artificial intelligence to detect projects at the earliest stage, giving general contractors, subcontractors, and suppliers in {state.name} a competitive edge.
+                Unlike public infrastructure projects that follow a formal bidding process, private commercial construction in {state.name} is awarded through relationships, reputation, and timing. The contractors who learn about a project first have the best opportunity to build trust with the owner and design team before the competition even knows the project exists.
               </p>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg">
@@ -116,7 +119,7 @@ function StatePage({ state }: { state: NonNullable<ReturnType<typeof getStateByS
             <div className="md:col-span-3">
               <h2 className="text-2xl font-bold text-dark mb-4">How Mercator.ai Works in {state.name}</h2>
               <p className="text-body leading-relaxed mb-6">
-                Mercator.ai is an AI-powered business development platform built for commercial construction. {isLive ? `In ${state.name}, Mercator.ai actively tracks:` : `Mercator.ai tracks the following signals to detect projects early:`}
+                Mercator.ai is an AI-powered business development platform built for commercial construction. {isLive ? `In ${state.name}, Mercator.ai actively tracks:` : `When ${state.name} coverage launches, Mercator.ai will track the following signals to detect projects early:`}
               </p>
               <ul className="space-y-3">
                 {[
@@ -134,6 +137,9 @@ function StatePage({ state }: { state: NonNullable<ReturnType<typeof getStateByS
                   </li>
                 ))}
               </ul>
+              <p className="text-body leading-relaxed mt-6">
+                Every signal is connected to actionable intelligence: who is behind the project, what is being built, how large the project is, and where it stands in the development pipeline. {isLive ? `${state.name} professionals` : "Contractors"} use this data to prioritize outreach, qualify opportunities, and build the relationships that lead to awarded work.
+              </p>
             </div>
             <div className="md:col-span-2 rounded-2xl overflow-hidden shadow-lg">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -143,50 +149,59 @@ function StatePage({ state }: { state: NonNullable<ReturnType<typeof getStateByS
         </div>
       </section>
 
-      {/* Who uses - cards with hard hat image */}
+      {/* Who uses - cards */}
       <section className="py-12 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-dark mb-4">Who Uses Mercator.ai in {state.name}?</h2>
-          <p className="text-body leading-relaxed mb-6">Mercator.ai serves construction professionals across the entire project lifecycle:</p>
+          <p className="text-body leading-relaxed mb-6">Mercator.ai serves construction professionals across the entire project lifecycle. Whether you are pursuing ground-up commercial projects, tenant improvements, or industrial developments in {state.name}, the platform gives you the early intelligence to compete more effectively:</p>
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {[
-              { title: "General Contractors", desc: `Identify and qualify private work in ${state.name} earlier. Be more selective with the projects you pursue and build relationships with owners before the competition.` },
-              { title: "Subcontractors", desc: `Gain upstream visibility into ${state.name} projects so you can build relationships that earn you a "last look" and position your specialty early.` },
-              { title: "Suppliers", desc: `Get specified earlier on ${state.name} projects by knowing what is being built and who is designing it. Follow projects from land acquisition through construction.` },
-            ].map((item) => (
-              <div key={item.title} className="bg-surface rounded-xl p-6">
-                <h3 className="font-bold text-dark mb-2">{item.title}</h3>
-                <p className="text-sm text-body">{item.desc}</p>
+              { title: "General Contractors", desc: `Identify and qualify private construction work in ${state.name} earlier. Discover projects at the land sale or rezoning stage and build relationships with owners and developers before the competition knows a project exists.` },
+              { title: "Subcontractors", desc: `Gain upstream visibility into ${state.name} construction projects so you can build relationships with general contractors and owners that earn you a "last look" on pricing. Position your specialty trade early on projects where your expertise is a natural fit.` },
+              { title: "Suppliers & Manufacturers", desc: `Get specified earlier on ${state.name} projects by knowing what is being built, who is designing it, and what materials will be required. Engage architects and engineers during the specification phase, when product decisions are being made.` },
+            ].map((card) => (
+              <div key={card.title} className="bg-surface rounded-xl p-6">
+                <h3 className="font-bold text-dark mb-2">{card.title}</h3>
+                <p className="text-sm text-body">{card.desc}</p>
               </div>
             ))}
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={bodyImages.hardHat} alt="Construction professional reviewing project on site" className="w-full h-[300px] object-cover" />
-          </div>
         </div>
       </section>
 
-      {/* What you'll find + waitlist */}
-      <section className="bg-surface py-12 md:py-20">
+      {/* What you'll find when live */}
+      <section className="py-12 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div className="rounded-2xl overflow-hidden shadow-lg">
+            <div className="order-2 md:order-1 rounded-2xl overflow-hidden shadow-lg">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={bodyImages.blueprints} alt="Architectural blueprints and construction plans" className="w-full h-[300px] object-cover" />
+              <img src={bodyImages.meeting} alt="Construction professionals reviewing project data" className="w-full h-[320px] object-cover" />
             </div>
-            <div>
+            <div className="order-1 md:order-2">
               <h2 className="text-2xl font-bold text-dark mb-4">What You&apos;ll Find on This Page When Live</h2>
-              <p className="text-body leading-relaxed mb-6">
-                {isLive ? `${state.name} coverage is live. Book a demo to see active construction projects, stakeholder data, and real-time alerts for ${state.name} markets.` : `When ${state.name} coverage launches, you'll be able to see active construction projects, stakeholder data, and real-time alerts. Sign up below to be notified.`}
+              <p className="text-body leading-relaxed mb-4">
+                {isLive
+                  ? `${state.name} coverage is live. Book a demo to see active construction projects, stakeholder data, and real-time alerts for ${state.name} markets.`
+                  : `When we launch ${state.name} coverage, this page will include a searchable feed of active commercial construction projects, stakeholder contact information, project timelines, and customizable alerts. You'll be able to filter by project type, location, stage, and value to find the opportunities that match your capabilities.`}
               </p>
-              <WaitlistForm location={state.name} />
+              <p className="text-body leading-relaxed">
+                {isLive
+                  ? `Use Mercator.ai to track ${state.name} projects from the earliest land deal through construction start. Set up custom alerts for the project types, locations, and stakeholder roles that matter to your business.`
+                  : `Mercator.ai is expanding coverage state by state, prioritizing the markets with the most active commercial construction. Join the waitlist below to be the first to know when ${state.name} goes live.`}
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* City links */}
+      {/* Waitlist */}
+      <section className="bg-surface py-12 md:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <WaitlistForm location={state.name} />
+        </div>
+      </section>
+
+      {/* Cities */}
       {state.coveredCities.length > 0 && (
         <section className="py-12 md:py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -256,7 +271,8 @@ function CategoryPage({ cat }: { cat: CategoryData }) {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <h2 className="text-2xl font-bold text-dark mb-4">What Is {cat.name} Construction?</h2>
-              <p className="text-body leading-relaxed">{cat.description}</p>
+              <p className="text-body leading-relaxed mb-4">{cat.description}</p>
+              <p className="text-body leading-relaxed">{cat.descriptionExtended}</p>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -266,8 +282,16 @@ function CategoryPage({ cat }: { cat: CategoryData }) {
         </div>
       </section>
 
-      {/* Signals with permits image */}
+      {/* Traditional problem section - full width */}
       <section className="bg-surface py-12 md:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-dark mb-4">The Problem with Traditional {cat.name} Lead Sources</h2>
+          <p className="text-body leading-relaxed">{cat.traditionalProblem}</p>
+        </div>
+      </section>
+
+      {/* Signals with permits image */}
+      <section className="py-12 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-5 gap-10">
             <div className="md:col-span-3">
@@ -294,18 +318,55 @@ function CategoryPage({ cat }: { cat: CategoryData }) {
         </div>
       </section>
 
-      {/* Why early with meeting image */}
+      {/* Why early - full width */}
+      <section className="bg-surface py-12 md:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-dark mb-4">Why Earlier Visibility Matters for {cat.name}</h2>
+          <p className="text-body leading-relaxed">{cat.whyEarly}</p>
+        </div>
+      </section>
+
+      {/* What you get with Mercator.ai */}
       <section className="py-12 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div className="order-2 md:order-1 rounded-2xl overflow-hidden shadow-lg">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={bodyImages.meeting} alt="Construction professionals planning project strategy" className="w-full h-[320px] object-cover" />
-            </div>
-            <div className="order-1 md:order-2">
-              <h2 className="text-2xl font-bold text-dark mb-4">Why Earlier Visibility Matters for {cat.name}</h2>
-              <p className="text-body leading-relaxed">{cat.whyEarly}</p>
-            </div>
+          <h2 className="text-2xl font-bold text-dark mb-4">What You Get with Mercator.ai for {cat.name} Leads</h2>
+          <p className="text-body leading-relaxed mb-6">
+            Mercator.ai delivers more than a list of projects. Every {cat.name.toLowerCase()} construction lead in the platform includes the complete intelligence package you need to evaluate the opportunity and take action:
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              { title: "Project Details", desc: `Full project scope including building type, square footage, estimated value, and current development stage for every ${cat.name.toLowerCase()} project detected.` },
+              { title: "Stakeholder Contacts", desc: "Names and contact information for property owners, developers, architects, engineers, and other project stakeholders so you can reach the right decision-maker." },
+              { title: "Development Timeline", desc: `A complete history of each ${cat.name.toLowerCase()} project's development activity, from the initial land deal through current permit status, so you understand where the project stands.` },
+              { title: "Real-Time Alerts", desc: `Customizable notifications when new ${cat.name.toLowerCase()} projects are detected in your market, when projects advance to the next stage, or when key stakeholder information changes.` },
+            ].map((item) => (
+              <div key={item.title} className="bg-surface rounded-xl p-5">
+                <h3 className="font-bold text-dark mb-2">{item.title}</h3>
+                <p className="text-sm text-body">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* From Planning to Construction Start pipeline */}
+      <section className="py-12 md:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-dark mb-4">From Planning to Construction Start</h2>
+          <p className="text-body leading-relaxed mb-8">
+            Mercator.ai tracks {cat.name.toLowerCase()} projects through every stage of the pre-construction pipeline. Here is how a typical {cat.name.toLowerCase()} project moves from concept to construction, and where Mercator.ai gives you an advantage:
+          </p>
+          <div className="space-y-6">
+            {cat.pipelineSteps.map((step, i) => (
+              <div key={i} className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="text-primary font-bold text-sm">{String(i + 1).padStart(2, "0")}</span>
+                </div>
+                <div>
+                  <p className="text-body">{step}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -316,34 +377,37 @@ function CategoryPage({ cat }: { cat: CategoryData }) {
           <h2 className="text-2xl font-bold text-dark mb-6">How Contractors Use Mercator.ai for {cat.name} Projects</h2>
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {[
-              { title: "General Contractors", desc: `Track ${cat.name.toLowerCase()} projects from land acquisition through permit filing. Build relationships with owners and developers before the project goes to formal bid.` },
-              { title: "Subcontractors", desc: `Identify ${cat.name.toLowerCase()} projects early and connect with GCs during the estimating phase. Position your specialty work before the bid list is finalized.` },
-              { title: "Suppliers", desc: `Get specified on ${cat.name.toLowerCase()} projects by engaging with architects and engineers during design. Follow projects from schematic design through construction.` },
-            ].map((item) => (
-              <div key={item.title} className="bg-white rounded-xl p-6">
-                <h3 className="font-bold text-dark mb-2">{item.title}</h3>
-                <p className="text-sm text-body">{item.desc}</p>
+              { title: "General Contractors", desc: `Track ${cat.name.toLowerCase()} projects from land acquisition through permit filing. Build relationships with owners and developers before the project goes to formal bid. Use Mercator.ai's stakeholder data to identify the decision-makers and design professionals involved, and time your outreach to coincide with the stage when contractor relationships are being formed.` },
+              { title: "Subcontractors", desc: `Identify ${cat.name.toLowerCase()} projects that match your specialty trade and engage general contractors early in the process. Knowing about a project before the GC issues a sub-bid invitation gives you time to prepare competitive pricing and demonstrate relevant experience. Mercator.ai shows you the project scope, timeline, and design team so you can target the right opportunities.` },
+              { title: "Suppliers & Manufacturers", desc: `Discover ${cat.name.toLowerCase()} projects during the design and specification phase when product selections are being made. Engage architects and engineers with product information and technical support while they are still evaluating options. Mercator.ai tracks the design team and project scope so you can align your outreach with the specification timeline.` },
+            ].map((card) => (
+              <div key={card.title} className="bg-white rounded-xl p-6 shadow-sm">
+                <h3 className="font-bold text-dark mb-2">{card.title}</h3>
+                <p className="text-sm text-body">{card.desc}</p>
               </div>
             ))}
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={bodyImages.siteAerial} alt="Aerial view of active construction site" className="w-full h-[300px] object-cover" />
+            <img src={bodyImages.siteAerial} alt={`Aerial view of ${cat.name.toLowerCase()} construction`} className="w-full h-[280px] object-cover" />
           </div>
         </div>
       </section>
 
-      {/* Market overview + waitlist */}
+      {/* Coverage + Waitlist */}
       <section className="py-12 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-10 items-start">
+          <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-2xl font-bold text-dark mb-4">{cat.name} Construction Market Overview</h2>
-              <p className="text-body leading-relaxed mb-4">
-                The {cat.name.toLowerCase()} construction sector represents a significant portion of annual US construction spending. Market dynamics including population growth, infrastructure investment, technological change, and regulatory requirements drive consistent demand for new {cat.name.toLowerCase()} projects across virtually every metro area.
-              </p>
-              <p className="text-body leading-relaxed">                
+              <h2 className="text-2xl font-bold text-dark mb-4">{cat.name} Construction Lead Coverage</h2>
+              <p className="text-body leading-relaxed mb-4">                
                 Mercator.ai is currently live in Texas and Florida, with plans to expand to additional states. As coverage grows, {cat.name.toLowerCase()} contractors in more markets will have access to the same AI-powered project intelligence that top firms in our launch markets already use.
+              </p>
+              <p className="text-body leading-relaxed mb-4">
+                Join the waitlist to be notified when Mercator.ai launches {cat.name.toLowerCase()} construction lead coverage in your market. Early waitlist members will receive priority access and onboarding support.
+              </p>
+              <p className="text-body leading-relaxed">
+                Every {cat.name.toLowerCase()} project in Mercator.ai includes the project location, development stage, stakeholder contacts, scope details, and a full timeline of development activity. You can set up custom alerts to be notified when new {cat.name.toLowerCase()} projects are detected, when existing projects advance to the next stage, or when stakeholder information changes.
               </p>
             </div>
             <div>
