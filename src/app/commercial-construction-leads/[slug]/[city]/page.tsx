@@ -8,6 +8,8 @@ import { getCityImage, getCityBodyImage, getCityImageAlt, bodyImages } from "@/d
 import WaitlistForm from "@/components/WaitlistForm";
 import StatsBar from "@/components/StatsBar";
 import CTASection from "@/components/CTASection";
+import HeroEmailCapture from "@/components/HeroEmailCapture";
+import CTAEmailSection from "@/components/CTAEmailSection";
 
 interface Props {
   params: Promise<{ slug: string; city: string }>;
@@ -73,9 +75,7 @@ export default async function CityPage({ params }: Props) {
               ? `Mercator.ai is actively tracking private construction projects in the ${cityName} metro area. Get AI-powered visibility into commercial, industrial, and multi-family projects before they go to bid.`
               : `Mercator.ai currently covers Texas and Florida. Join the waitlist to be notified when ${cityName}, ${state.abbr} coverage launches.`}
           </p>
-          <a href="https://meetings.hubspot.com/chase-book/demo" target="_blank" rel="noopener" className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full text-sm font-bold hover:brightness-110 transition">
-            Book a Live Demo
-          </a>
+          <HeroEmailCapture />
         </div>
       </section>
 
@@ -271,7 +271,7 @@ export default async function CityPage({ params }: Props) {
         </div>
       </section>
 
-      <CTASection />
+      <CTAEmailSection />
     </>
   );
 }

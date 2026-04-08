@@ -7,8 +7,10 @@ import type { CategoryData } from "@/data/categories";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import WaitlistForm from "@/components/WaitlistForm";
 import StatsBar from "@/components/StatsBar";
-import CTASection from "@/components/CTASection";
+import CTASection from "@/components/CTASection"; 
 import CategoryGrid from "@/components/CategoryGrid";
+import HeroEmailCapture from "@/components/HeroEmailCapture";
+import CTAEmailSection from "@/components/CTAEmailSection";
 import { getStateImage, getCategoryImage, getCategoryBodyImage, getCategoryImageAlt, bodyImages } from "@/data/images";
 
 interface Props {
@@ -80,9 +82,7 @@ function StatePage({ state }: { state: NonNullable<ReturnType<typeof getStateByS
               ? `Mercator.ai provides live, AI-powered construction intelligence in ${state.name}. Track private projects, discover early-stage opportunities, and connect with decision-makers before your competitors know a project exists.`
               : `Mercator.ai currently covers Texas and Florida with plans to expand. Join the waitlist to be notified when ${state.name} coverage launches.`}
           </p>
-          <a href="https://meetings.hubspot.com/chase-book/demo" target="_blank" rel="noopener" className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full text-sm font-bold hover:brightness-110 transition">
-            Book a Live Demo
-          </a>
+          <HeroEmailCapture />
         </div>
       </section>
 
@@ -225,7 +225,7 @@ function StatePage({ state }: { state: NonNullable<ReturnType<typeof getStateByS
         </div>
       </section>
 
-      <CTASection />
+      <CTAEmailSection />
     </>
   );
 }

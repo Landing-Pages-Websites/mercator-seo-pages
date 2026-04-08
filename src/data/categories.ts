@@ -183,7 +183,7 @@ export const categories: CategoryData[] = [
   },
   {
     slug: "data-centers",
-    name: "Data Centers",
+    name: "Data Center",
     parent: "Industrial",
     description: "Data center construction includes hyperscale facilities, colocation centers, edge computing installations, and enterprise server farms. This is one of the fastest-growing construction sectors, driven by cloud computing, AI workloads, and digital infrastructure demand. Data centers require specialized electrical, cooling, and structural systems.",
     descriptionExtended: "Data center construction is unlike any other building type. These facilities are defined by their power and cooling requirements, not their square footage. A single hyperscale data center campus can consume 100+ megawatts of power. The construction involves massive electrical infrastructure, precision cooling systems, redundant mechanical plants, and specialized structural designs. The market is dominated by hyperscale operators and a growing number of colocation providers, each with multi-billion-dollar construction pipelines. Contractors who specialize in data center work need early visibility into where operators are acquiring land and securing power.",
